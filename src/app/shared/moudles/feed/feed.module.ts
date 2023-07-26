@@ -7,6 +7,8 @@ import {StoreModule} from '@ngrx/store'
 import {feedReducer} from 'src/app/shared/moudles/feed/store/reducers'
 import {FeedService} from 'src/app/shared/moudles/feed/services/feed.service'
 import {RouterLink, RouterModule} from '@angular/router'
+import {ErrorMessageModule} from 'src/app/shared/moudles/errorMessage/errorMessage.module'
+import {LoadingModule} from 'src/app/shared/moudles/loading/loading.module'
 
 @NgModule({
   imports: [
@@ -15,6 +17,8 @@ import {RouterLink, RouterModule} from '@angular/router'
     StoreModule.forFeature('feed', feedReducer),
     RouterLink,
     RouterModule,
+    ErrorMessageModule,
+    LoadingModule,
   ],
   declarations: [FeedComponent],
   exports: [FeedComponent],
