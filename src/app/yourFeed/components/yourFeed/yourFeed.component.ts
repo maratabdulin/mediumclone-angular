@@ -6,5 +6,5 @@ import {Component} from '@angular/core'
   styleUrls: ['yourFeed.component.scss'],
 })
 export class YourFeedComponent {
-  apiUrl = '/articles/feed'
+  apiUrl = '/articles/article'
 }
