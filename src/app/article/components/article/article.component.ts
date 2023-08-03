@@ -11,6 +11,7 @@ import {
 } from 'src/app/article/store/selectors'
 import {currentUserSelector} from 'src/app/auth/store/selectors'
 import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface'
+import {deleteArticleAction} from 'src/app/article/store/actions/deleteArticle.action'
 
 @Component({
   selector: 'mc-article',
@@ -71,5 +72,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
       .subscribe((article: ArticleInterface | null) => {
         this.article = article
       })
+  }
+
+  deleteArticle() {
+    this.store.dispatch(deleteArticleAction({slug: this.slug}))
   }
 }

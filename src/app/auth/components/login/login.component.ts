@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.valid)
     const request: LoginRequestInterface = {
       user: {
         password: this.form.value.password,

@@ -11,6 +11,8 @@ import {articleReducer} from 'src/app/article/store/reducers'
 import {ArticleComponent} from 'src/app/article/components/article/article.component'
 import {ArticleService as SharedArticleService} from 'src/app/shared/services/article.service'
 import {TagListModule} from 'src/app/shared/moudles/tagList/tagList.module'
+import {ArticleService} from 'src/app/article/services/article.service'
+import {DeleteArticleEffect} from 'src/app/article/store/effects/deleteArticle.effect'
 
 const routes = [
   {
@@ -22,7 +24,7 @@ const routes = [
 @NgModule({
   imports: [
     CommonModule,
-    EffectsModule.forFeature([GetArticleEffect]),
+    EffectsModule.forFeature([GetArticleEffect, DeleteArticleEffect]),
     StoreModule.forFeature('article', articleReducer),
     RouterLink,
     RouterModule,
@@ -33,6 +35,6 @@ const routes = [
   ],
   declarations: [ArticleComponent],
   exports: [],
-  providers: [SharedArticleService],
+  providers: [SharedArticleService, ArticleService],
 })
 export class ArticleModule {}

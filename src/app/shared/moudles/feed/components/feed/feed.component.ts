@@ -51,7 +51,6 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('changes', changes)
     const isApiUrlChanged =
       !changes['apiUrlProps'].firstChange &&
       changes['apiUrlProps'].currentValue !==
