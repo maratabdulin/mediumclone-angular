@@ -10,7 +10,6 @@ import {
 } from 'src/app/editArticle/store/selectors'
 import {ActivatedRoute} from '@angular/router'
 import {getArticleAction} from 'src/app/editArticle/store/actions/getArticle.action'
-import {createArticleAction} from 'src/app/createArticle/store/actions/createArticle.action'
 import {ArticleInterface} from 'src/app/shared/types/article.interface'
 import {updateArticleAction} from 'src/app/editArticle/store/actions/editArticle.action'
 
@@ -35,7 +34,6 @@ export class EditArticleComponent implements OnInit {
   ngOnInit() {
     this.initializedValues()
     this.fetchData()
-    console.log(this.slug)
   }
 
   onSubmit(articleInput: ArticleInputInterface) {
