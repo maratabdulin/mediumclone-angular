@@ -21,6 +21,7 @@ import {CreateArticleModule} from 'src/app/createArticle/createArticle.module'
 import {EditArticleModule} from 'src/app/editArticle/editArticle.module'
 import {SettingsModule} from 'src/app/settings/settings.module'
 import {UserProfileModule} from 'src/app/userProfile/userProfile.module'
+import {AuthGuardService} from 'src/app/shared/services/authGuard.service'
 
 @NgModule({
   declarations: [AppComponent],
@@ -50,6 +51,7 @@ import {UserProfileModule} from 'src/app/userProfile/userProfile.module'
   ],
   providers: [
     PersistenceService,
+    AuthGuardService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

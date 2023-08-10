@@ -6,11 +6,13 @@ import {StoreModule} from '@ngrx/store'
 import {settingReducer} from 'src/app/settings/store/reducers'
 import {ReactiveFormsModule} from '@angular/forms'
 import {BackendErrorMessagesModule} from 'src/app/shared/moudles/backendErrorMessages/backendErrorMessages.module'
+import {AuthGuardService} from 'src/app/shared/services/authGuard.service'
 
 const routes = [
   {
     path: 'settings',
     component: SettingsComponent,
+    canActivate: [AuthGuardService],
   },
 ]
 
@@ -23,5 +25,6 @@ const routes = [
     BackendErrorMessagesModule,
   ],
   declarations: [SettingsComponent],
+  providers: [AuthGuardService],
 })
 export class SettingsModule {}
